@@ -10,10 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    s1=std::shared_ptr<HallSensor>(new HallSensor(515,160));
-    deuren[0]=std::shared_ptr<Deur>(new SchuifDeur(503,250,80, s1.get()));
-    deuren[1]=std::shared_ptr<Deur>(new DraaiDeur(295,290,30,true));
-    deuren[2]=std::shared_ptr<Deur>(new DraaiDeur(248,140,40,false));
+    s1=std::make_shared<HallSensor>(515,160);
+    deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get());
+    deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true);
+    deuren[2]=std::make_shared<DraaiDeur>(248,140,40,false);
 }
 
 MainWindow::~MainWindow()
