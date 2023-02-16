@@ -12,12 +12,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    slots[0]=std::make_shared<SleutelSlot>("Qing");
-    slots[1]=std::make_shared<CodeSlot>(2023);
-    slots[2]=std::make_shared<SleutelSlot>("OOPR");
+    sloten[0]=std::make_shared<SleutelSlot>("Qing");
+    sloten[1]=std::make_shared<CodeSlot>(2023);
+    sloten[2]=std::make_shared<SleutelSlot>("OOPR");
     s1=std::make_shared<HallSensor>(515,160);
-    deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get(), slots[0].get());
-    deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true, slots[1].get());
+    deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get(), sloten[0].get());
+    deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true, sloten[1].get());
     deuren[2]=std::make_shared<DraaiDeur>(248,140,40,false);
 }
 

@@ -6,7 +6,7 @@
 
 class Slot {
 public:
-    VIRTUAL ~Slot(){}
+    virtual ~Slot(){};
     virtual void ontgrendel(std::string) = 0;
     virtual void vergrendel()=0;
     virtual bool isVergrendeld()=0;
