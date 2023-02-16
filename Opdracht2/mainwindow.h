@@ -28,6 +28,7 @@ private:
     std::shared_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Sensor> s1;
     std::array<std::shared_ptr<Deur>,3> deuren = {};
+    std::array<std::shared_ptr<Slot>,3> slots = {};
     std::shared_ptr<Slot> slot0;
     std::shared_ptr<Slot> slot1;
     std::shared_ptr<Slot> slot2;
