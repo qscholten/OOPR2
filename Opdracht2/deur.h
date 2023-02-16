@@ -6,6 +6,7 @@
 
 class Deur {
 public:
+    virtual ~Deur(){}
     Deur(int, int, unsigned int);
     Deur(int, int, unsigned int, Slot*);
     virtual void open();

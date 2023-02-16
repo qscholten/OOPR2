@@ -5,6 +5,7 @@
 
 class Deur {
 public:
+    virtual ~Deur(){}
     Deur(int, int, unsigned int);
     virtual ~Deur();
     virtual void open();
