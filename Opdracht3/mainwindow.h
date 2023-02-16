@@ -28,9 +28,7 @@ private:
     std::shared_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Sensor> s1;
     std::array<std::shared_ptr<Deur>,3> deuren = {};
-    std::shared_ptr<Slot> slot0;
-    std::shared_ptr<Slot> slot1;
-    std::shared_ptr<Slot> slot2;
+    std::array<std::shared_ptr<Slot>,4> sloten = {};
 };
 
 #endif // MAINWINDOW_H

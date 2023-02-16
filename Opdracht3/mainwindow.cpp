@@ -12,12 +12,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    slot0=std::make_shared<SleutelSlot>("Qing");
-    slot1=std::make_shared<CodeSlot>(2023);
-    slot2=std::make_shared<SleutelSlot>("OOPR");
+    sloten[0]=std::make_shared<SleutelSlot>("Qing");
+    sloten[1]=std::make_shared<CodeSlot>(2023);
+    sloten[2]=std::make_shared<SleutelSlot>("OOPR");
+    sloten[3]=std::make_shared<CodeSlot>(2020);
     s1=std::make_shared<HallSensor>(515,160);
-    deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get(), slot0.get());
-    deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true, slot1.get());
+    deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get());
+    deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true);
+    deuren[0]->addSlot(sloten[0].get());
+    deuren[0]->addSlot(sloten[2].get());
+    deuren[1]->addSlot(sloten[1].get());
+    //deuren[1]->addSlot(sloten[3].get());
     deuren[2]=std::make_shared<DraaiDeur>(248,140,40,false);
 }
 
@@ -56,8 +61,9 @@ void MainWindow::on_schuifdeurKnop_clicked() {
         deuren[0]->sluit();
     }
     else {
-        if (deuren[0]->krijgSlot() != nullptr) {
-            deuren[0]->krijgSlot()->ontgrendel(ui->lineEdit->text().toStdString());
+        if (deuren[0]->aantalSloten() != 0) {
+            deuren[0]->krijgSlot(0)->ontgrendel(ui->lineEdit->text().toStdString()); //Qing
+            deuren[0]->krijgSlot(1)->ontgrendel("OOPR"); //OOPR
             ui->lineEdit->setText("");
         }
         deuren[0]->open();
@@ -73,8 +79,8 @@ void MainWindow::on_draaideurKnop1_clicked() {
         deuren[2]->sluit();
     }
     else {
-        if (deuren[2]->krijgSlot() != nullptr) {
-            deuren[2]->krijgSlot()->ontgrendel(ui->lineEdit1->text().toStdString());
+        if (deuren[2]->aantalSloten() != 0) {
+            deuren[2]->krijgSlot(0)->ontgrendel(ui->lineEdit->text().toStdString()); //no lock
             ui->lineEdit1->setText("");
         }
         deuren[2]->open();
@@ -87,8 +93,9 @@ void MainWindow::on_draaideurKnop2_clicked() {
         deuren[1]->sluit();
     }
     else {
-        if (deuren[1]->krijgSlot() != nullptr) {
-            deuren[1]->krijgSlot()->ontgrendel(ui->lineEdit2->text().toStdString());
+        if (deuren[1]->aantalSloten() != 0) {
+            deuren[1]->krijgSlot(0)->ontgrendel(ui->lineEdit2->text().toStdString()); //2023
+            //deuren[1]->krijgSlot(1)->ontgrendel("2020"); //2020
             ui->lineEdit2->setText("");
         }
         deuren[1]->open();

@@ -4,9 +4,6 @@
 DraaiDeur::DraaiDeur(int x, int y, unsigned int lengte, bool liggend): Deur(x,y, lengte), liggend(liggend) {
 }
 
-DraaiDeur::DraaiDeur(int x, int y, unsigned int lengte, bool liggend, Slot *slot): Deur(x,y, lengte, slot), liggend(liggend) {
-}
-
 void DraaiDeur::teken(QPaintDevice *tp) {
     QPainter p(tp);
     p.setBrush(Qt::SolidPattern);

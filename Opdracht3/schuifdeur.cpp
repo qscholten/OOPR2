@@ -4,16 +4,15 @@
 SchuifDeur::SchuifDeur(int x, int y, unsigned int lengte, Sensor *sensor): Deur(x,y,lengte), hallsensor(sensor) {
     hallsensor->activeer();
 }
-SchuifDeur::SchuifDeur(int x, int y, unsigned int lengte, Sensor *sensor, Slot *slot): Deur(x,y,lengte, slot), hallsensor(sensor) {
-    hallsensor->activeer();
-}
 
 void SchuifDeur::sluit() {
     if (!hallsensor->isGeactiveerd()) {
         this->zetStatus(false);
         hallsensor->activeer();
-        if (krijgSlot() != nullptr) {
-            krijgSlot()->vergrendel();
+        if (aantalSloten() != 0) {
+            for(int i=0;i<aantalSloten();i++) {
+                krijgSlot(i)->vergrendel();
+            }
         }
     }
 }

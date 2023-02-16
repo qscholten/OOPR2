@@ -11,6 +11,7 @@ class QPaintDevice;
 class Sensor
 {
 public:
+    virtual ~Sensor(){}
     Sensor(int,int);
     virtual void teken(QPaintDevice*);
     virtual void activeer();

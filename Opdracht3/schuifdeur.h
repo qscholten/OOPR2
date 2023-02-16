@@ -8,7 +8,6 @@
 class SchuifDeur: public Deur {
 public:
     SchuifDeur(int, int, unsigned int, Sensor*);
-    SchuifDeur(int, int, unsigned int, Sensor*, Slot*);
     virtual void sluit() override;
     virtual void teken(QPaintDevice *) override;
 private:

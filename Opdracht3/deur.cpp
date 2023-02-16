@@ -2,26 +2,31 @@
 
 #include <QPainter>
 
-Deur::Deur(int x, int y, unsigned int lengte): x_coordinaat(x), y_coordinaat(y), lengte(lengte), status(false), slot(nullptr) {
-}
-
-Deur::Deur(int x, int y, unsigned int lengte, Slot *slot): x_coordinaat(x), y_coordinaat(y), lengte(lengte), slot(slot), status(false) {
+Deur::Deur(int x, int y, unsigned int lengte): x_coordinaat(x), y_coordinaat(y), lengte(lengte), status(false) {
 }
 
 void Deur::open() {
-    if (slot == nullptr){
+    if (sloten.empty()) {
         status = true;
         return;
     }
-    if (!slot->isVergrendeld()) {
+    int ontgrendeld = 0;
+    for (int i=0;i<sloten.size();i++) {
+        if (!krijgSlot(i)->isVergrendeld()) {
+            ontgrendeld++;
+        }
+    }
+    if (ontgrendeld == sloten.size()) {
         status = true;
     }
 }
 
 void Deur::sluit() {
     status = false;
-    if (slot != nullptr) {
-        slot->vergrendel();
+    if (sloten.size() != 0) {
+        for (int i=0;i<sloten.size();i++) {
+            krijgSlot(i)->vergrendel();
+        }
     }
 }
 
@@ -60,8 +65,20 @@ void Deur::zetStatus(bool x) {
     status = x;
 }
 
-Slot* Deur::krijgSlot() {
-    return slot;
+Slot* Deur::krijgSlot(int index) {
+    std::list<Slot*>::iterator it = sloten.begin();
+    for (int i = 0; i<index; i++) {
+        ++it;
+    }
+    return *it;
+}
+
+void Deur::addSlot(Slot* x) {
+    sloten.push_back(x);
+}
+
+int Deur::aantalSloten() {
+    return sloten.size();
 }
 
 
