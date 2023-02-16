@@ -10,6 +10,7 @@ public:
     void teken(QPaintDevice *) override;
 private:
     bool liggend;
+    bool links;
 };
 
 #endif // DRAAIDEUR_H

@@ -13,7 +13,12 @@ void DraaiDeur::teken(QPaintDevice *tp) {
 
     if(liggend) {
         if (isDeurOpen()) {
-            p.drawLine(this->krijgx(), this->krijgy(), this->krijgx(), this->krijgy()-this->deurLengte());
+            if (links) {
+                p.drawLine(this->krijgx(), this->krijgy(), this->krijgx(), this->krijgy()+this->deurLengte());
+            }
+            else {
+                p.drawLine(this->krijgx(), this->krijgy(), this->krijgx(), this->krijgy()-this->deurLengte());
+            }
         }
         else {
             p.drawLine(this->krijgx(), this->krijgy(), this->krijgx()-this->deurLengte(), this->krijgy());
@@ -21,7 +26,12 @@ void DraaiDeur::teken(QPaintDevice *tp) {
     }
     else {
         if (isDeurOpen()) {
-            p.drawLine(this->krijgx(),this->krijgy(), this->krijgx()+this->deurLengte(), this->krijgy());
+            if (links) {
+                p.drawLine(this->krijgx(),this->krijgy(), this->krijgx()-this->deurLengte(), this->krijgy());
+            }
+            else {
+                p.drawLine(this->krijgx(),this->krijgy(), this->krijgx()+this->deurLengte(), this->krijgy());
+            }
         }
         else {
             p.drawLine(this->krijgx(), this->krijgy(), this->krijgx(), this->krijgy()-this->deurLengte());
