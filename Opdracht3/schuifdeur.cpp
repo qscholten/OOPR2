@@ -12,6 +12,7 @@ void SchuifDeur::sluit() {
         if (aantalSloten() != 0) {
             for(int i=0;i<aantalSloten();i++) {
                 krijgSlot(i)->vergrendel();
+                krijgSlot(i)->paintStatus();
             }
         }
     }

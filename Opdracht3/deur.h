@@ -3,6 +3,7 @@
 
 #include <QPaintDevice>
 #include "slot.h"
+#include <list>
 
 class Deur {
 public:
@@ -24,7 +25,6 @@ private:
     int x_coordinaat;
     int y_coordinaat;
     unsigned int lengte;
-    Slot *slot;
     std::list<Slot*> sloten;
 };
 

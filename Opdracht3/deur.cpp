@@ -26,6 +26,7 @@ void Deur::sluit() {
     if (sloten.size() != 0) {
         for (int i=0;i<sloten.size();i++) {
             krijgSlot(i)->vergrendel();
+            krijgSlot(i)->paintStatus();
         }
     }
 }
