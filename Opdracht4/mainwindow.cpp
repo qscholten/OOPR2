@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "codeslot.h"
 #include "sleutelslot.h"
+#include "herkenningsslot.h"
 #include "ui_mainwindow.h"
 #include <QPainter>
 #include "hallsensor.h"
@@ -17,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     sloten[2]=std::make_shared<SleutelSlot>("OOPR", ui->lineEditOOPR);
     sloten[3]=std::make_shared<CodeSlot>(2020, ui->lineEdit2020);
     sloten[4]=std::make_shared<SleutelSlot>("Piep", ui->lineEditPiep);
+    sloten[5]=std::make_shared<HerkenningsSlot> (ui->lineEditPiep);
     s1=std::make_shared<HallSensor>(515,160);
     deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get());
     deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true);
@@ -25,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     deuren[0]->addSlot(sloten[3].get());
     deuren[1]->addSlot(sloten[1].get());
     deuren[1]->addSlot(sloten[2].get());
-    deuren[2]->addSlot(sloten[4].get());
+    deuren[2]->addSlot(sloten[5].get());
 }
 
 MainWindow::~MainWindow()
@@ -110,4 +112,16 @@ void MainWindow::on_draaideurKnop2_clicked() {
         deuren[1]->open();
     }
     update();
+}
+
+void MainWindow::on_denyKnop_clicked() {
+
+}
+
+void MainWindow::on_accessKnop_clicked() {
+
+}
+
+void MainWindow::on_kaartenbak_clicked() {
+
 }

@@ -28,16 +28,20 @@ SOURCES += main.cpp\
     deur.cpp \
     draaideur.cpp \
     hallsensor.cpp \
+    herkenningsslot.cpp \
         mainwindow.cpp \
     schuifdeur.cpp \
     sensor.cpp \
     sleutelslot.cpp
 
 HEADERS  += mainwindow.h \
+    afdrukker.h \
     codeslot.h \
     deur.h \
     draaideur.h \
+    drukbox.h \
     hallsensor.h \
+    herkenningsslot.h \
     schuifdeur.h \
     sensor.h \
     sleutelslot.h \
