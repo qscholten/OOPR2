@@ -17,6 +17,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -40,6 +41,12 @@ public:
     QLabel *labelOOPR;
     QLineEdit *lineEdit2020;
     QLabel *label2020;
+    QPushButton *accessKnop;
+    QPushButton *denyKnop;
+    QLineEdit *lineEditAddPerson;
+    QLabel *labelAddPerson;
+    QTextBrowser *textBrowser;
+    QPushButton *kaartenbak;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -48,7 +55,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(670, 431);
+        MainWindow->resize(20, 65);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         sensor_act = new QPushButton(centralWidget);
@@ -93,10 +100,28 @@ public:
         label2020 = new QLabel(centralWidget);
         label2020->setObjectName("label2020");
         label2020->setGeometry(QRect(550, 260, 71, 16));
+        accessKnop = new QPushButton(centralWidget);
+        accessKnop->setObjectName("accessKnop");
+        accessKnop->setGeometry(QRect(620, 10, 41, 31));
+        denyKnop = new QPushButton(centralWidget);
+        denyKnop->setObjectName("denyKnop");
+        denyKnop->setGeometry(QRect(620, 50, 41, 31));
+        lineEditAddPerson = new QLineEdit(centralWidget);
+        lineEditAddPerson->setObjectName("lineEditAddPerson");
+        lineEditAddPerson->setGeometry(QRect(530, 30, 71, 22));
+        labelAddPerson = new QLabel(centralWidget);
+        labelAddPerson->setObjectName("labelAddPerson");
+        labelAddPerson->setGeometry(QRect(530, 10, 71, 16));
+        textBrowser = new QTextBrowser(centralWidget);
+        textBrowser->setObjectName("textBrowser");
+        textBrowser->setGeometry(QRect(560, 120, 101, 91));
+        kaartenbak = new QPushButton(centralWidget);
+        kaartenbak->setObjectName("kaartenbak");
+        kaartenbak->setGeometry(QRect(560, 90, 101, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 670, 17));
+        menuBar->setGeometry(QRect(0, 0, 20, 17));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName("mainToolBar");
@@ -122,6 +147,10 @@ public:
         labelQing->setText(QCoreApplication::translate("MainWindow", "Code: Qing", nullptr));
         labelOOPR->setText(QCoreApplication::translate("MainWindow", "Code: OOPR", nullptr));
         label2020->setText(QCoreApplication::translate("MainWindow", "Code: 2020", nullptr));
+        accessKnop->setText(QCoreApplication::translate("MainWindow", "Access", nullptr));
+        denyKnop->setText(QCoreApplication::translate("MainWindow", "Deny", nullptr));
+        labelAddPerson->setText(QCoreApplication::translate("MainWindow", "Add person", nullptr));
+        kaartenbak->setText(QCoreApplication::translate("MainWindow", "Show kaartenbak", nullptr));
     } // retranslateUi
 
 };
