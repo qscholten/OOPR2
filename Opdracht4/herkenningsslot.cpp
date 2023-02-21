@@ -34,7 +34,10 @@ std::string HerkenningsSlot::toonKaartenbak() {
 
 void HerkenningsSlot::voegAutorisatieToe(std::string s, bool b) {
     std::pair x(s,b);
-    kaartenbak.insert(x);
+    std::map<std::string, bool>::iterator it = kaartenbak.find(x.first);
+    if (it == kaartenbak.end()) {
+        kaartenbak.insert(x);
+    }
 }
 
 QLineEdit* HerkenningsSlot::krijgInput() {
