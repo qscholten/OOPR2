@@ -1,10 +1,14 @@
 #include "herkenningsslot.h"
 
-HerkenningsSlot::HerkenningsSlot(QLineEdit *le): vergrendeld(true), input(le) {
+HerkenningsSlot::HerkenningsSlot(QLineEdit *le, Afdrukker *print): vergrendeld(true), input(le), printer(print) {
 }
 
 void HerkenningsSlot::ontgrendel(std::string key) {
-    if (kaartenbak.find(key)->second) {
+    std::map<std::string, bool>::iterator it = kaartenbak.find(key);
+    if (it == kaartenbak.end()) {
+        return;
+    }
+    if (it->second) {
         vergrendeld = false;
     }
 }
@@ -21,9 +25,11 @@ std::string HerkenningsSlot::toonKaartenbak() {
     std::string s;
     std::map<std::string,bool>::iterator it = kaartenbak.begin();
     for (int i=0; i<kaartenbak.size(); i++) {
-        s = s + "\n Naam: ";
+        s = s + "\n Naam: " + it->first + "\t Toegang: " + std::to_string(it->second);
         ++it;
     }
+    printer->toonText(s);
+    return s;
 }
 
 void HerkenningsSlot::voegAutorisatieToe(std::string s, bool b) {

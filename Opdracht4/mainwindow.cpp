@@ -14,12 +14,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    a1 = std::make_shared<DrukBox> (ui->kaartenbak);
     sloten[0]=std::make_shared<SleutelSlot>("Qing", ui->lineEditQing);
     sloten[1]=std::make_shared<CodeSlot>(2023, ui->lineEdit2023);
     sloten[2]=std::make_shared<SleutelSlot>("OOPR", ui->lineEditOOPR);
     sloten[3]=std::make_shared<CodeSlot>(2020, ui->lineEdit2020);
     sloten[4]=std::make_shared<SleutelSlot>("Piep", ui->lineEditPiep);
-    sloten[5]=std::make_shared<HerkenningsSlot>(ui->lineEditPiep);
+    sloten[5]=std::make_shared<HerkenningsSlot>(ui->lineEditOOPR, a1.get());
     s1=std::make_shared<HallSensor>(515,160);
     deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get());
     deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true);
@@ -30,7 +31,9 @@ MainWindow::MainWindow(QWidget *parent) :
     deuren[1]->addSlot(sloten[5].get());
     deuren[2]->addSlot(sloten[4].get());
     HerkenningsSlot* hs = dynamic_cast<HerkenningsSlot*> (sloten[5].get());
-    a1 = std::make_shared<DrukBox> (ui->kaartenbak, hs);
+    hs->voegAutorisatieToe("Qing", true);
+    hs->voegAutorisatieToe("Kwak", false);
+    hs->voegAutorisatieToe("Kwik", true);
 }
 
 MainWindow::~MainWindow()
@@ -126,5 +129,6 @@ void MainWindow::on_denyKnop_clicked() {
 }
 
 void MainWindow::on_kaartenbakKnop_clicked() {
-    a1->toonText("hoi");
+    HerkenningsSlot* hs = dynamic_cast<HerkenningsSlot*> (sloten[5].get());
+    hs->toonKaartenbak();
 }

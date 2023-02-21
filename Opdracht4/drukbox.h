@@ -7,7 +7,7 @@
 
 class DrukBox: public Afdrukker {
 public:
-    DrukBox(QTextBrowser*, HerkenningsSlot*);
+    DrukBox(QTextBrowser*);
     void toonText (std::string) override;
     void clearMedium() override;
 private:
