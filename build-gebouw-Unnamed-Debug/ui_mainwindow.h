@@ -55,7 +55,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(670, 431);
+        MainWindow->resize(730, 431);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName("centralWidget");
         sensor_act = new QPushButton(centralWidget);
@@ -102,26 +102,26 @@ public:
         label2020->setGeometry(QRect(550, 260, 71, 16));
         lineEditAddPerson = new QLineEdit(centralWidget);
         lineEditAddPerson->setObjectName("lineEditAddPerson");
-        lineEditAddPerson->setGeometry(QRect(530, 50, 71, 22));
+        lineEditAddPerson->setGeometry(QRect(580, 30, 71, 22));
         labelAdd = new QLabel(centralWidget);
         labelAdd->setObjectName("labelAdd");
-        labelAdd->setGeometry(QRect(530, 30, 71, 16));
+        labelAdd->setGeometry(QRect(580, 10, 71, 16));
         allowKnop = new QPushButton(centralWidget);
         allowKnop->setObjectName("allowKnop");
-        allowKnop->setGeometry(QRect(610, 0, 41, 31));
+        allowKnop->setGeometry(QRect(660, 0, 41, 31));
         denyKnop = new QPushButton(centralWidget);
         denyKnop->setObjectName("denyKnop");
-        denyKnop->setGeometry(QRect(610, 40, 41, 31));
+        denyKnop->setGeometry(QRect(660, 40, 41, 31));
         kaartenbak = new QTextBrowser(centralWidget);
         kaartenbak->setObjectName("kaartenbak");
-        kaartenbak->setGeometry(QRect(550, 120, 111, 91));
+        kaartenbak->setGeometry(QRect(550, 120, 171, 91));
         kaartenbakKnop = new QPushButton(centralWidget);
         kaartenbakKnop->setObjectName("kaartenbakKnop");
         kaartenbakKnop->setGeometry(QRect(550, 80, 111, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 670, 17));
+        menuBar->setGeometry(QRect(0, 0, 730, 17));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName("mainToolBar");
@@ -145,7 +145,7 @@ public:
         labelPiep->setText(QCoreApplication::translate("MainWindow", "Code: Piep", nullptr));
         label2023->setText(QCoreApplication::translate("MainWindow", "Code: 2023", nullptr));
         labelQing->setText(QCoreApplication::translate("MainWindow", "Code: Qing", nullptr));
-        labelOOPR->setText(QCoreApplication::translate("MainWindow", "Access: OOPR", nullptr));
+        labelOOPR->setText(QCoreApplication::translate("MainWindow", "Access kaart", nullptr));
         label2020->setText(QCoreApplication::translate("MainWindow", "Code: 2020", nullptr));
         labelAdd->setText(QCoreApplication::translate("MainWindow", "Add Person", nullptr));
         allowKnop->setText(QCoreApplication::translate("MainWindow", "Allow", nullptr));

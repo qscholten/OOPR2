@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
+    <width>730</width>
     <height>431</height>
    </rect>
   </property>
@@ -155,7 +155,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Access: OOPR</string>
+     <string>Access kaart</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit2020">
@@ -184,8 +184,8 @@
    <widget class="QLineEdit" name="lineEditAddPerson">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>50</y>
+      <x>580</x>
+      <y>30</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -194,8 +194,8 @@
    <widget class="QLabel" name="labelAdd">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>30</y>
+      <x>580</x>
+      <y>10</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -207,7 +207,7 @@
    <widget class="QPushButton" name="allowKnop">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>660</x>
       <y>0</y>
       <width>41</width>
       <height>31</height>
@@ -220,7 +220,7 @@
    <widget class="QPushButton" name="denyKnop">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>660</x>
       <y>40</y>
       <width>41</width>
       <height>31</height>
@@ -235,7 +235,7 @@
      <rect>
       <x>550</x>
       <y>120</y>
-      <width>111</width>
+      <width>171</width>
       <height>91</height>
      </rect>
     </property>
@@ -259,7 +259,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>670</width>
+     <width>730</width>
      <height>17</height>
     </rect>
    </property>

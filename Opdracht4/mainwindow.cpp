@@ -32,8 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     deuren[2]->addSlot(sloten[4].get());
     HerkenningsSlot* hs = dynamic_cast<HerkenningsSlot*> (sloten[5].get());
     hs->voegAutorisatieToe("Qing", true);
-    hs->voegAutorisatieToe("Kwak", false);
-    hs->voegAutorisatieToe("Kwik", true);
+    hs->voegAutorisatieToe("Kwik", false);
 }
 
 MainWindow::~MainWindow()
@@ -121,14 +120,22 @@ void MainWindow::on_draaideurKnop2_clicked() {
 }
 
 void MainWindow::on_allowKnop_clicked() {
-
+    HerkenningsSlot* hs = dynamic_cast<HerkenningsSlot*> (sloten[5].get());
+    hs->voegAutorisatieToe(ui->lineEditAddPerson->text().toStdString(), true);
+    ui->lineEditAddPerson->setText("");
+    update();
 }
 
 void MainWindow::on_denyKnop_clicked() {
-
+    HerkenningsSlot* hs = dynamic_cast<HerkenningsSlot*> (sloten[5].get());
+    hs->voegAutorisatieToe(ui->lineEditAddPerson->text().toStdString(), false);
+    ui->lineEditAddPerson->setText("");
+    update();
 }
 
 void MainWindow::on_kaartenbakKnop_clicked() {
     HerkenningsSlot* hs = dynamic_cast<HerkenningsSlot*> (sloten[5].get());
+    a1->clearMedium();
     hs->toonKaartenbak();
+    update();
 }

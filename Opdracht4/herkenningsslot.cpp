@@ -25,7 +25,14 @@ std::string HerkenningsSlot::toonKaartenbak() {
     std::string s;
     std::map<std::string,bool>::iterator it = kaartenbak.begin();
     for (int i=0; i<kaartenbak.size(); i++) {
-        s = s + "\n Naam: " + it->first + "\t Toegang: " + std::to_string(it->second);
+        std::string toegang = "";
+        if (it->second) {
+            toegang = "Ja";
+        }
+        else {
+            toegang = "Nee";
+        }
+        s = s + "Naam: " + it->first + "\t Toegang: " + toegang + "\n";
         ++it;
     }
     printer->toonText(s);
