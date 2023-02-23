@@ -27,7 +27,6 @@ void KaartSlot::voegIdKaartToe(IdKaart* idk) {
 }
 
 void KaartSlot::verwijderIdKaart(std::string) {
-
 }
 
 QLineEdit* KaartSlot::krijgInput() {

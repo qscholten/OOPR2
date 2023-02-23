@@ -150,12 +150,12 @@
      <rect>
       <x>340</x>
       <y>190</y>
-      <width>71</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Access kaart</string>
+     <string>Access kaart OOPR</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit2020">
@@ -178,7 +178,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Code: 2020</string>
+     <string>Access kaart 2020</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditAddPerson">

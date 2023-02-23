@@ -32,7 +32,7 @@ private:
     std::shared_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Sensor> s1;
     std::array<std::shared_ptr<Deur>,3> deuren = {};
-    std::array<std::shared_ptr<Slot>,6> sloten = {};
+    std::array<std::shared_ptr<Slot>,7> sloten = {};
     std::shared_ptr<Afdrukker> a1;
 };
 

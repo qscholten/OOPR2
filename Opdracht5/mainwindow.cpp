@@ -2,6 +2,7 @@
 #include "codeslot.h"
 #include "drukbox.h"
 #include "herkenningsslot.h"
+#include "kaartslot.h"
 #include "sleutelslot.h"
 #include "ui_mainwindow.h"
 #include <QPainter>
@@ -21,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     sloten[3]=std::make_shared<CodeSlot>(2020, ui->lineEdit2020);
     sloten[4]=std::make_shared<SleutelSlot>("Piep", ui->lineEditPiep);
     sloten[5]=std::make_shared<HerkenningsSlot>(ui->lineEditOOPR, a1.get());
+    sloten[6]=std::make_shared<KaartSlot>("OOPR", ui->lineEditOOPR);
+    sloten[7]=std::make_shared<KaartSlot>("2020", ui->lineEdit2020);
     s1=std::make_shared<HallSensor>(515,160);
     deuren[0]=std::make_shared<SchuifDeur>(503,250,80, s1.get());
     deuren[1]=std::make_shared<DraaiDeur>(295,290,30,true);
