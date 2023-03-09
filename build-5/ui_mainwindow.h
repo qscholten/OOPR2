@@ -93,7 +93,7 @@ public:
         lineEditOOPR->setGeometry(QRect(340, 210, 71, 22));
         labelOOPR = new QLabel(centralWidget);
         labelOOPR->setObjectName("labelOOPR");
-        labelOOPR->setGeometry(QRect(340, 190, 71, 16));
+        labelOOPR->setGeometry(QRect(340, 190, 81, 16));
         lineEdit2020 = new QLineEdit(centralWidget);
         lineEdit2020->setObjectName("lineEdit2020");
         lineEdit2020->setGeometry(QRect(550, 280, 71, 22));
@@ -145,8 +145,8 @@ public:
         labelPiep->setText(QCoreApplication::translate("MainWindow", "Code: Piep", nullptr));
         label2023->setText(QCoreApplication::translate("MainWindow", "Code: 2023", nullptr));
         labelQing->setText(QCoreApplication::translate("MainWindow", "Code: Qing", nullptr));
-        labelOOPR->setText(QCoreApplication::translate("MainWindow", "Access kaart", nullptr));
-        label2020->setText(QCoreApplication::translate("MainWindow", "Code: 2020", nullptr));
+        labelOOPR->setText(QCoreApplication::translate("MainWindow", "Access kaart OOPR", nullptr));
+        label2020->setText(QCoreApplication::translate("MainWindow", "Access kaart 2020", nullptr));
         labelAdd->setText(QCoreApplication::translate("MainWindow", "Add Person", nullptr));
         allowKnop->setText(QCoreApplication::translate("MainWindow", "Allow", nullptr));
         denyKnop->setText(QCoreApplication::translate("MainWindow", "Deny", nullptr));

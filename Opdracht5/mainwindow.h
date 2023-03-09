@@ -27,12 +27,11 @@ private slots:
     void on_allowKnop_clicked();
     void on_denyKnop_clicked();
     void on_kaartenbakKnop_clicked();
-
 private:
     std::shared_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Sensor> s1;
     std::array<std::shared_ptr<Deur>,3> deuren = {};
-    std::array<std::shared_ptr<Slot>,7> sloten = {};
+    std::array<std::shared_ptr<Slot>,8> sloten = {};
     std::shared_ptr<Afdrukker> a1;
 };
 

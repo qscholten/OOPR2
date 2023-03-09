@@ -2,7 +2,7 @@
 #define HERKENNINGSSLOT_H
 
 #include "slot.h"
-#include "afdrukker.h"
+class Afdrukker;
 
 class HerkenningsSlot: public Slot {
 public:

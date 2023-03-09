@@ -1,4 +1,5 @@
 #include "herkenningsslot.h"
+#include "afdrukker.h"
 
 HerkenningsSlot::HerkenningsSlot(QLineEdit *le, Afdrukker *print): vergrendeld(true), input(le), printer(print) {
 }
