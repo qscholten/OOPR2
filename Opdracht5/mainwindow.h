@@ -27,6 +27,11 @@ private slots:
     void on_allowKnop_clicked();
     void on_denyKnop_clicked();
     void on_kaartenbakKnop_clicked();
+    void on_addIDKnop_clicked();
+    void on_deleteIDKnop_clicked();
+    void on_deleteAccess_clicked();
+    void on_addAccess_clicked();
+
 private:
     std::shared_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Sensor> s1;

@@ -1,9 +1,27 @@
 #include "kaartslot.h"
 #include "idkaart.h"
 
-std::map<std::string, IdKaart*> KaartSlot::IdKaarten = {};
+std::map<std::string, IdKaart*> KaartSlot::idKaarten = {};
 
-KaartSlot::KaartSlot(std::string plaats, QLineEdit *qle): plaats(plaats), input(qle) {
+KaartSlot::KaartSlot(std::string plaats, QLineEdit* qle): plaats(plaats), input(qle), vergrendeld(true) {
+}
+
+void KaartSlot::voegIdKaartToe(IdKaart *kaart) {
+    idKaarten[kaart->userID()] = kaart;
+}
+
+void KaartSlot::verwijderIdKaart(std::string id) {
+    std::map<std::string, IdKaart*>::iterator it = idKaarten.find(id);
+    idKaarten.erase(it);
+}
+
+void KaartSlot::ontgrendel(std::string s) {
+    std::map<std::string, IdKaart*>::iterator it = idKaarten.find(s);
+    if (it != idKaarten.end()) {
+        if (it->second->heeftToegang(this)) {
+            vergrendeld = false;
+        }
+    }
 }
 
 void KaartSlot::vergrendel() {
@@ -14,19 +32,8 @@ bool KaartSlot::isVergrendeld() {
     return vergrendeld;
 }
 
-void KaartSlot::ontgrendel(std::string) {
-    vergrendeld = false;
-}
-
-void KaartSlot::voegIdKaartToe(IdKaart* idk) {
-    std::pair x(idk->userId(), idk);
-    std::map<std::string, IdKaart*>::iterator it = IdKaarten.find(x.first);
-    if (it == IdKaarten.end()) {
-        IdKaarten.insert(x);
-    }
-}
-
-void KaartSlot::verwijderIdKaart(std::string) {
+std::map<std::string, IdKaart*> KaartSlot::krijgKaarten() {
+    return idKaarten;
 }
 
 QLineEdit* KaartSlot::krijgInput() {

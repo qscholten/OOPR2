@@ -4,18 +4,18 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
-#include "kaartslot.h"
 
+class KaartSlot;
 
 class IdKaart {
 public:
-    ~IdKaart(){}
-    IdKaart(std::string, std::string, std::string);
-    std::string userId();
+    IdKaart(std::string id, std::string naamEigenaar, std::string adresEigenaar);
+    std::string userID();
     void geefToegang(KaartSlot*);
     void verwijderToegang(KaartSlot*);
-    bool heeftToegangTot(KaartSlot*);
+    bool heeftToegang(KaartSlot*);
 private:
+    ~IdKaart(){}
     std::string id;
     std::vector<KaartSlot*> toegang;
     std::string naamEigenaar;
